@@ -1,0 +1,27 @@
+.header {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 10px solid #C81685;
+}
+
+#logo {
+    padding: 20px;
+}
+
+.header button {
+    background-color: #E10098;
+    color: white;
+    padding: 10px;
+    margin-right: 20px;
+}
+
+.header button:hover {
+    background-color: #C81685;
+}
+
+#iconAdd {
+    margin-left: 5px;
+}
