@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { addProduct } from '../actions/productsActions';
 
 class NewProduct extends Component {
 
@@ -15,9 +17,19 @@ class NewProduct extends Component {
 
     saveProduct = e => {
         e.preventDefault();
-        console.log('jala');
-        const { name, price, imageUrl } = this.state;
-        
+        // console.log('saving...');
+        // const { name, price, imageUrl } = this.state;
+
+        const infoProduct = {
+            name: this.state.name,
+            price: this.state.price,
+            image: this.state.imageUrl 
+        }
+
+        this.props.addProduct(infoProduct);
+
+        this.props.history.push('/');
+
     }
 
     render() {
@@ -37,4 +49,4 @@ class NewProduct extends Component {
     }
 }
 
-export default NewProduct;
+export default connect(null, { addProduct }) (NewProduct);
