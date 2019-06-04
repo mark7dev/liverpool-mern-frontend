@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addProduct } from '../actions/productsActions';
+import './styles/NewProduct.css';
 
 class NewProduct extends Component {
 
@@ -35,7 +36,9 @@ class NewProduct extends Component {
     render() {
         return (
             <div className="newProduct">
-                <form onSubmit={this.saveProduct}>
+                
+                <form onSubmit={this.saveProduct} className="form__newProduct">
+                    <h3>¿Qué producto deseas agregar?</h3>
                     <label>Producto</label>
                     <input type="text" onChange={this.infoProduct} name="name" required/>
                     <label>Precio</label>

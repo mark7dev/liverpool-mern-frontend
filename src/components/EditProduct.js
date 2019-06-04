@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { showProduct, editProduct } from '../actions/productsActions';
+import './styles/EditProduct.css';
 
 class EditProduct extends Component {
 
