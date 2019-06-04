@@ -7,7 +7,7 @@ class NewProduct extends Component {
     state = {
         name: '',
         price: '',
-        imageUrl: '',
+        image: '',
         // error: false
     }
 
@@ -18,12 +18,12 @@ class NewProduct extends Component {
     saveProduct = e => {
         e.preventDefault();
         // console.log('saving...');
-        // const { name, price, imageUrl } = this.state;
+        const { name, price, image } = this.state;
 
         const infoProduct = {
-            name: this.state.name,
-            price: this.state.price,
-            image: this.state.imageUrl 
+            name,
+            price,
+            image 
         }
 
         this.props.addProduct(infoProduct);
@@ -41,7 +41,7 @@ class NewProduct extends Component {
                     <label>Precio</label>
                     <input type="number" onChange={this.infoProduct} name="price" required/>
                     <label>Imágen</label>
-                    <input type="text" placeholder="Ingrese la url de la imágen" onChange={this.infoProduct} name="imageUrl" required/>
+                    <input type="text" placeholder="Ingrese la url de la imágen" onChange={this.infoProduct} name="image" required/>
                     <button>AGREGAR</button>
                 </form>
             </div>
