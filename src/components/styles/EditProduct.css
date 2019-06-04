@@ -1,0 +1,34 @@
+.editProduct {
+    background-color: #F2F2F2;
+    padding-top: 100px;
+}
+
+.form__editProduct {
+    margin: auto;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: rgba(231, 153, 194, 0.5);
+    padding: 0 50px;
+    border-radius: 20px;
+    border: solid 2px #C81685
+}
+
+.form__editProduct label {
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.form__editProduct input {
+    margin-bottom: 10px;
+}
+
+.form__editProduct button {
+    background-color: #E10098;
+    color: white;
+    padding: 10px;
+    font-weight: bolder;
+    margin: 15px auto;
+    width: 200px;
+}

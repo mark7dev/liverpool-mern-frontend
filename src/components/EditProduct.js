@@ -43,7 +43,7 @@ class EditProduct extends Component {
             id,
             name,
             price,
-            image,
+            image
         }
 
         this.props.editProduct(infoProduct);
@@ -56,12 +56,12 @@ class EditProduct extends Component {
         const { name, price, image } = this.state
         return (
             <div className="editProduct">
-                <form onSubmit={this.updateProduct}>
+                <form className="form__editProduct" onSubmit={this.updateProduct}>
                     <label>Producto</label>
                     <input defaultValue={name} type="text" onChange={this.infoProduct} name="name" required/>
                     <label>Precio</label>
                     <input defaultValue={price} type="number" onChange={this.infoProduct} name="price" required/>
-                    <label>Imágen</label>
+                    <label>Url de la imágen</label>
                     <input defaultValue={image} type="text" placeholder="Ingrese la url de la imágen" onChange={this.infoProduct} name="image" required/>
                     <button>GUARDAR CAMBIOS</button>
                 </form>
