@@ -1,0 +1,21 @@
+.products {
+    /* border-left: 1px solid #b3b3b3; */
+    background-color: #F2F2F2;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.products h1{
+    text-align: center;
+}
+
+.cardsItem__container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    width: 80%;
+    justify-content: center;
+    padding: 10px;
+    border-top: 2px solid #b3b3b3;
+    border-bottom: 2px solid #b3b3b3;
+}

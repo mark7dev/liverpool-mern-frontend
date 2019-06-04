@@ -1,0 +1,38 @@
+.cardItem {
+    width: 340px;
+    height: 500px;
+    margin: 15px;
+    padding: 10px;
+    background: white;
+    border-radius: 10px;
+}
+
+.cardItem:hover {
+    box-shadow: 10px 10px 5px #e799c2;
+}
+
+.cardItem__btns__container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+
+.itemBtn {
+    margin-left: 5px;
+}
+
+.information {
+    font-size: 15px;
+    width: 100%;
+}
+
+.price {
+    color: #FF0000;
+    font-weight: bolder;
+}
+
+.img {
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+}
