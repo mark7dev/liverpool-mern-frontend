@@ -3,15 +3,21 @@ import { connect } from 'react-redux';
 import { addProduct } from '../actions/productsActions';
 import './styles/NewProduct.css';
 
+import FileBase64 from './react-file-base64';
+
 class NewProduct extends Component {
 
-    state = {
-        // _id: '',
-        name: '',
-        price: '',
-        image: '',
-        // error: false
+    constructor() {
+        super()
+        this.state = {
+            // _id: '',
+            name: '',
+            price: '',
+            image: '',
+            // error: false
+        }
     }
+
 
     infoProduct = e => {
         this.setState({ [e.target.name]: e.target.value})
@@ -35,7 +41,12 @@ class NewProduct extends Component {
 
     }
 
+    getFiles(files){
+        this.setState({image: files.base64})
+    }
+
     render() {
+        console.log(this.state);
         return (
             <div className="newProduct">
                 
@@ -46,7 +57,13 @@ class NewProduct extends Component {
                     <label>Precio</label>
                     <input type="text" onChange={this.infoProduct} name="price" required/>
                     <label>Imágen</label>
-                    <input type="text" placeholder="Ingrese la url de la imágen" onChange={this.infoProduct} name="image" required/>
+                    {/* <input type="text" placeholder="Ingrese la url de la imágen" onChange={this.infoProduct} name="image" required/> */}
+
+                    <FileBase64
+                        multiple={ false }
+                        onDone={ this.getFiles.bind(this) }
+                    />
+
                     <button>AGREGAR</button>
                 </form>
             </div>
