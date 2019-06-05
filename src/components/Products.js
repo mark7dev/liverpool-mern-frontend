@@ -22,7 +22,7 @@ class Products extends Component {
                         (
                             products.map(product => (
                                 <CardItem 
-                                    key={product.id}
+                                    key={product._id}
                                     info={product}
                                 />
                             ))

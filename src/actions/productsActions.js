@@ -2,15 +2,17 @@ import { SHOW_PRODUCTS, DELETE_PRODUCT, ADD_PRODUCT, SHOW_PRODUCT, EDIT_PRODUCT 
 import request from 'superagent';
 // import axios from 'axios';
 
+const API = 'http://localhost:3001/apilivercrud/v1'
+
 export const showProducts = () => dispatch => {
-    const APIShowProducts = 'http://localhost:5000/productos';
+    const APIShowProducts = `${API}/products`;
 
     request
     .get(APIShowProducts)
     .then(response => {
         dispatch({
             type: SHOW_PRODUCTS,
-            payload: response.body
+            payload: response.body.products
         })
     })
     .catch(error => {
@@ -19,14 +21,14 @@ export const showProducts = () => dispatch => {
 }
 
 export const showProduct = id => dispatch => {
-    const APIShowProduct = `http://localhost:5000/productos/${id}`;
+    const APIShowProduct = `${API}/products/${id}`;
 
     request
     .get(APIShowProduct)
     .then(response => {
         dispatch({
             type: SHOW_PRODUCT,
-            payload: response.body
+            payload: response.body.product
         })
     })
     .catch(error => {
@@ -35,7 +37,7 @@ export const showProduct = id => dispatch => {
 }
  
 export const deleteProduct = id => dispatch => {
-    const APIDeleteProduct = `http://localhost:5000/productos/${id}`;
+    const APIDeleteProduct = `${API}/products/${id}`;
 
     request
     .delete(APIDeleteProduct)
@@ -53,13 +55,12 @@ export const deleteProduct = id => dispatch => {
 export const addProduct = product => dispatch => {
 
     request
-    .post('http://localhost:5000/productos/')
+    .post(`${API}/products`)
     .send(product)
     .then(response => {
-        // console.log(response);
         dispatch({
             type: ADD_PRODUCT,
-            payload: response.body
+            payload: response.body.newProduct
         })
     })
     .catch(error => {
@@ -67,16 +68,16 @@ export const addProduct = product => dispatch => {
     })
 }
 
+
 export const editProduct = product => dispatch => {
     
     request
-    .put(`http://localhost:5000/productos/${product.id}`)
+    .put(`${API}/products/${product.id}`)
     .send(product)
     .then(response => {
-        // console.log(response);
         dispatch({
             type: EDIT_PRODUCT,
-            payload: response.body
+            payload: response.body.product
         })
     })
     .catch(error => {

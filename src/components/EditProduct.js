@@ -54,6 +54,8 @@ class EditProduct extends Component {
 
     render() {
         const { name, price, image } = this.state
+        console.log(this.props)
+        console.log(this.state)
         return (
             <div className="editProduct">
                 <form className="form__editProduct" onSubmit={this.updateProduct}>

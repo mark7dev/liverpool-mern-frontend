@@ -21,7 +21,7 @@ export default function(state = initialState, action) {
         case DELETE_PRODUCT:
             return {
                 ...state,
-                products: state.products.filter(product => product.id !== action.payload)
+                products: state.products.filter(product => product._id !== action.payload)
             }
         
         case ADD_PRODUCT:
@@ -34,7 +34,7 @@ export default function(state = initialState, action) {
             return {
                 ...state,
                 products: state.products.map(
-                    product => product.id === action.payload.id ? (product = action.payload) : product
+                    product => product._id === action.payload._id ? (product = action.payload) : product
                 )
             }
 

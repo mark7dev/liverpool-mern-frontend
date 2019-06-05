@@ -6,6 +6,7 @@ import './styles/NewProduct.css';
 class NewProduct extends Component {
 
     state = {
+        // _id: '',
         name: '',
         price: '',
         image: '',
@@ -22,6 +23,7 @@ class NewProduct extends Component {
         const { name, price, image } = this.state;
 
         const infoProduct = {
+            // _id,
             name,
             price,
             image 
@@ -42,7 +44,7 @@ class NewProduct extends Component {
                     <label>Producto</label>
                     <input type="text" onChange={this.infoProduct} name="name" required/>
                     <label>Precio</label>
-                    <input type="number" onChange={this.infoProduct} name="price" required/>
+                    <input type="text" onChange={this.infoProduct} name="price" required/>
                     <label>Imágen</label>
                     <input type="text" placeholder="Ingrese la url de la imágen" onChange={this.infoProduct} name="image" required/>
                     <button>AGREGAR</button>
