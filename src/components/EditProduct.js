@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { showProduct, editProduct } from '../actions/productsActions';
 import './styles/EditProduct.css';
-import FileBase64 from './react-file-base64';
 
 class EditProduct extends Component {
 
@@ -10,7 +9,6 @@ class EditProduct extends Component {
         name: '',
         price: '',
         image: '',
-        // error: false
     }
 
     componentDidMount() {
@@ -31,15 +29,10 @@ class EditProduct extends Component {
 
     infoProduct = e => {
         this.setState({ [e.target.name]: e.target.value})
-        // this.setState({ 
-        //     name: e.target.name.value,
-        //     price: e.target.price.value,
-        // })
     }
 
     updateProduct = e => {
         e.preventDefault();
-        // console.log('saving...');
 
         const { id } = this.props.match.params;
         const { name, price, image } = this.state;
@@ -74,11 +67,6 @@ class EditProduct extends Component {
                     <input defaultValue={price} type="number" onChange={this.infoProduct} name="price" required/>
                     <label>Url de la imágen</label>
                     <input defaultValue={image} type="text" placeholder="Ingrese la url de la imágen" onChange={this.infoProduct} name="image" required disabled/>
-                    {/* <label>Seleccionar nueva imagen</label>
-                    <FileBase64
-                        multiple={ false }
-                        onDone={ this.getFiles.bind(this) }
-                    /> */}
                     <button>GUARDAR CAMBIOS</button>
                 </form>
             </div>

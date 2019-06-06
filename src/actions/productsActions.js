@@ -1,6 +1,5 @@
 import { SHOW_PRODUCTS, DELETE_PRODUCT, ADD_PRODUCT, SHOW_PRODUCT, EDIT_PRODUCT } from './types';
 import request from 'superagent';
-// import axios from 'axios';
 
 const API = 'https://liverpool-crud-challenge.herokuapp.com/apilivercrud/v1'
 
