@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { showProduct, editProduct } from '../actions/productsActions';
 import './styles/EditProduct.css';
+import FileBase64 from './react-file-base64';
 
 class EditProduct extends Component {
 
@@ -30,6 +31,10 @@ class EditProduct extends Component {
 
     infoProduct = e => {
         this.setState({ [e.target.name]: e.target.value})
+        // this.setState({ 
+        //     name: e.target.name.value,
+        //     price: e.target.price.value,
+        // })
     }
 
     updateProduct = e => {
@@ -52,6 +57,10 @@ class EditProduct extends Component {
 
     }
 
+    getFiles(files) {
+        this.setState({image: files.base64})
+    }
+
     render() {
         const { name, price, image } = this.state
         console.log(this.props)
@@ -64,7 +73,12 @@ class EditProduct extends Component {
                     <label>Precio</label>
                     <input defaultValue={price} type="number" onChange={this.infoProduct} name="price" required/>
                     <label>Url de la imágen</label>
-                    <input defaultValue={image} type="text" placeholder="Ingrese la url de la imágen" onChange={this.infoProduct} name="image" required/>
+                    <input defaultValue={image} type="text" placeholder="Ingrese la url de la imágen" onChange={this.infoProduct} name="image" required disabled/>
+                    {/* <label>Seleccionar nueva imagen</label>
+                    <FileBase64
+                        multiple={ false }
+                        onDone={ this.getFiles.bind(this) }
+                    /> */}
                     <button>GUARDAR CAMBIOS</button>
                 </form>
             </div>

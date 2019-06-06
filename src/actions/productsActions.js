@@ -2,7 +2,7 @@ import { SHOW_PRODUCTS, DELETE_PRODUCT, ADD_PRODUCT, SHOW_PRODUCT, EDIT_PRODUCT 
 import request from 'superagent';
 // import axios from 'axios';
 
-const API = 'http://localhost:3001/apilivercrud/v1'
+const API = 'https://liverpool-crud-challenge.herokuapp.com/apilivercrud/v1'
 
 export const showProducts = () => dispatch => {
     const APIShowProducts = `${API}/products`;

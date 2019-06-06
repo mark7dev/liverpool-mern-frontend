@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addProduct } from '../actions/productsActions';
 import './styles/NewProduct.css';
-
 import FileBase64 from './react-file-base64';
 
 class NewProduct extends Component {
@@ -10,11 +9,9 @@ class NewProduct extends Component {
     constructor() {
         super()
         this.state = {
-            // _id: '',
             name: '',
             price: '',
             image: '',
-            // error: false
         }
     }
 
@@ -25,11 +22,9 @@ class NewProduct extends Component {
 
     saveProduct = e => {
         e.preventDefault();
-        // console.log('saving...');
         const { name, price, image } = this.state;
 
         const infoProduct = {
-            // _id,
             name,
             price,
             image 
@@ -46,7 +41,6 @@ class NewProduct extends Component {
     }
 
     render() {
-        console.log(this.state);
         return (
             <div className="newProduct">
                 
